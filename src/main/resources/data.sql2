@@ -1,0 +1,3 @@
+INSERT INTO account(id, firstName, lastName, email) VALUES
+    ('261fb68d-70ab-46bc-be74-6c551b8f528f', 'chad', 'middleton', 'c.m.middleton@gmail.com'),
+    ('1ffb0473-214b-413d-8aa8-8e2eff4396a0', 'scott', 'curry', 's_dott_curry@yahoo.com');
