@@ -20,7 +20,7 @@ public class LeagueService {
         return leagueRepository.save(league);
     }
 
-    public League getLeagueById(UUID id) {
+    public League getLeagueById(Long id) {
         return leagueRepository.getReferenceById(id);
     }
 
@@ -32,7 +32,7 @@ public class LeagueService {
         return leagueRepository.save(league);
     }
 
-    public void deleteLeague(UUID id) {
+    public void deleteLeague(Long id) {
         leagueRepository.deleteById(id);
     }
 }

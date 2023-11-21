@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/api/v1/league")
+@RequestMapping(value = "${base.path}/league")
 public class LeagueController {
     private final LeagueService leagueService;
 
@@ -24,7 +24,7 @@ public class LeagueController {
     }
 
     @GetMapping("/{id}")
-    public @ResponseBody ResponseEntity<League> getLeagueById(@PathVariable UUID id) {
+    public @ResponseBody ResponseEntity<League> getLeagueById(@PathVariable Long id) {
         return ResponseEntity.ok(leagueService.getLeagueById(id));
     }
 
@@ -40,7 +40,7 @@ public class LeagueController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteLeague(@PathVariable UUID id){
+    public void deleteLeague(@PathVariable Long id){
         leagueService.deleteLeague(id);
     }
 }

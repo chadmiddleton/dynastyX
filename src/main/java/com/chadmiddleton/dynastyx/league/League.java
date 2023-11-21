@@ -1,7 +1,7 @@
 package com.chadmiddleton.dynastyx.league;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.chadmiddleton.dynastyx.account.Account;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.UUID;
@@ -10,6 +10,10 @@ import java.util.UUID;
 @Entity
 public class League {
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name = "Dynasty League";
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
 }
