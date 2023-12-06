@@ -14,9 +14,7 @@ public class LeagueService {
         this.leagueRepository = leagueRepository;
     }
 
-    public League createLeague(Account account){
-        League league = new League();
-        league.setId(account.getId());
+    public League createLeague(League league){
         return leagueRepository.save(league);
     }
 

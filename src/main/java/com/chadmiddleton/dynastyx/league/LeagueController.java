@@ -19,8 +19,8 @@ public class LeagueController {
     }
 
     @PostMapping()
-    public @ResponseBody ResponseEntity<League> createLeague(@RequestBody Account account) {
-        return ResponseEntity.ok(leagueService.createLeague(account));
+    public @ResponseBody ResponseEntity<League> createLeague(@RequestBody League league) {
+        return ResponseEntity.ok(leagueService.createLeague(league));
     }
 
     @GetMapping("/{id}")

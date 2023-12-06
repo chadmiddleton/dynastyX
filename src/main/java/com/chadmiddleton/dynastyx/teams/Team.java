@@ -13,6 +13,7 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "team")
+    @OneToMany
+    @JoinColumn(name = "team")
     private List<Player> players;
 }

@@ -1,9 +1,8 @@
 package com.chadmiddleton.dynastyx.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Service
 class AccountService {
@@ -12,7 +11,7 @@ class AccountService {
     public AccountService(AccountRepository accountRepository){
         this.accountRepository = accountRepository;
     }
-    public Account createAccount(Account account){
+    public Account createAccount(Account account) throws DataIntegrityViolationException {
         return accountRepository.save(account);
     }
 
