@@ -18,8 +18,10 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
+    @NotNull(message = "Username is required")
+    private String username;
+//    private String firstName;
+//    private String lastName;
     @Email(message = "Email should be valid")
     @NotNull(message = "Email is required")
     @Column(unique = true)
